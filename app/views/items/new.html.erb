@@ -1,0 +1,50 @@
+
+
+
+<%#= render 'form', item: @item %>
+<div class="container">
+<h2>Want To List an Item? Rent Yours Now!</h2>
+<%= simple_form_for(@item) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= f.input :name %>
+      </div>
+      <div class="form-group col-md-6">
+        <%= f.input :brand, as: :select, collection: ["Gucci", "Armani", "Dior", "Zara", "Rolex"] %>
+      </div>
+    </div>
+    <div class="form-inputs">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+    <%= f.input :item_type , as: :select, collection: ["Dress", "Tuxedo", "Suit", "Shoes", "Watch"] %>
+  </div>
+  <div class="form-group col-md-6">
+    <%= f.input :size, as: :select, collection: ["XL", "S", "M", "L", "XL"] %>
+  </div>
+</div>
+
+  <div class="form-inputs">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= f.input :gender, as: :select, collection: ["Male", "Female", "Unisex"] %>
+      </div>
+      <div class="form-group col-md-6">
+        <%= f.input :initial_condition, as: :select, collection: ["New with tags", "Like new", "Contains defaults"] %>
+      </div>
+    </div>
+    <div class="form-group col-md-4 p-0">
+      <%= f.input :price %>
+      <%= f.input :photo, as: :file %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Real Submit Button!", class: "btn btn-outline-dark", id: "RealItemSubmitButton", style: "display: none;" %>
+      <a id="FakeItemSubmitButton" class="btn btn-outline-dark">Create Item!</a>
+    </div>
+  </div>
+<% end %>
+
+

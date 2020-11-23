@@ -1,0 +1,33 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+@import "flatpickr/dist/flatpickr";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+
+@import "items/index";
+@import "items/show";
+
+@import "bookings/new";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  overflow: overlay;
+
+}
+
+.container {
+  height: 100%;
+}
